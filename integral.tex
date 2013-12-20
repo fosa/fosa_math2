@@ -1,0 +1,36 @@
+% coding:utf-8
+
+%----------------------------------------
+%FOSAPHY, a LaTeX-Code for a summary of mathematics
+%Copyright (C) 2013, Mario Felder, Michael Fallegger
+
+%This program is free software; you can redistribute it and/or
+%modify it under the terms of the GNU General Public License
+%as published by the Free Software Foundation; either version 2
+%of the License, or (at your option) any later version.
+
+%This program is distributed in the hope that it will be useful,
+%but WITHOUT ANY WARRANTY; without even the implied warranty of
+%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%GNU General Public License for more details.
+%----------------------------------------
+
+\chapter{Integrale}
+\section{Allgemeine Flächenintegrale}
+Schwerpunkt einer Fläche:
+\[s_x=\frac{\iint x \di A}{A}\]
+\[s_y=\frac{\iint y \di A}{A}\]
+
+	
+\section{Doppelintegrale}
+\[ I= \int\limits_{x=a}^{b} Q(x) \di x=\int\limits_{x=a}^{b} \left( \int\limits_{y=f_{u(x)}}^{f_{o(x)}}f(x,y)\di y\right) \di x\]
+\\
+Integrationsreihenfolge vertauschen:
+\[ \iint f(x,y)\di A=\int\limits_{y=\alpha}^{\beta} \left( \int\limits_{x=g_{l(y)}}^{g_{r(y)}}f(x,y)\di x\right) \di y\]
+\\
+Integrieren mit Polarkoordinaten:
+\[x=r\cdot\cos \varphi\]
+\[y=r\cdot\sin \varphi\]
+\[ \int\limits_{\varphi=\varphi_1}^{\varphi_2} \left( \int\limits_{r=r_{u(\varphi)}}^{r_{o(\varphi)}}f(r\cdot\cos\varphi,r\cdot\sin\varphi )r\cdot\di r\right) \di \varphi\]
+\\
+Volumenintegrale:
