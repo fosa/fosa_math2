@@ -17,19 +17,23 @@
 
 \chapter{Differential Funktionen}
 \section{Tangentialebene, Linearisierung, totales Differential}
-Die Gleichung der Tangentialebene an die Fläche $z=f(x,y)$ im Punkt$(x_0,y_0,z_0)$, $z_0=f(x_0,y_0)$ lautet:
+Die Gleichung der \textbf{Tangentialebene} an die Fläche $z=f(x,y)$ im Punkt$(x_0,y_0,z_0)$, $z_0=f(x_0,y_0)$ lautet:
 \[
 \boxed{\begin{aligned}	
 		z&=f(x_0,y_0) + f_{'x}(x_0,y_0)(x-x_0)+ f_{'y}(x_0,y_0)(y-y_0)
 	\end{aligned}}\]
 \newline
-Der Funktionswert ändert sich linearisiert um das \underline{totale Differential} von f(x,y).
-	\[\di z= f_{'x}(x_0,y_0)\di x + f_{'y}(x_0,y_0)\di y\]\\
+\textbf{Linearisierte Gleichung} entspricht der Tangentialebene mit eingesetzten $x_0$ und $y_0$ Werten.\\
+\\
+Der Funktionswert ändert sich linearisiert um das \textbf{totale Differential} von $f(x,y)$
+\[\boxed{
+	\di z = \pdifrac{f}{x}\di x + \pdifrac{f}{y}\di y = f_{'x}(x_0,y_0)\cdot\di x + f_{'y}(x_0,y_0)\cdot\di y
+}\]\\
 Es wird $\di x= \Delta x$ und $\di y= \Delta y$ gesetzt.
 	
 \section{Implizit Ableiten}
 Neue Methode um Funktionen einfacher implizit Ableiten.
-Durch $F(x,y)=0$ werde implizit eine Funktion $y=f(x)$ definiert. Dann gilt für die Ableitung von $f$ an der Stelle (x,y) des Graphen:
+Durch $F(x,y)=0$ werde implizit eine Funktion $y=f(x)$ definiert. Dann gilt für die Ableitung von $f$ an der Stelle $(x,y)$ des Graphen:
 \[
 \boxed{\begin{aligned}	
 		y'&=-\frac{F_{'x}(x,y)}{F_{'x}(x,y)}
@@ -38,28 +42,29 @@ Durch $F(x,y)=0$ werde implizit eine Funktion $y=f(x)$ definiert. Dann gilt für
 	
 \section{Kettenregel}
 Mit Hilfe der Kettenregel kann eine verschachtelte Funktion wie $z(t)=f(x(t),y(t))$ nach t abgeleitet werden.
-\[
-\boxed{\begin{aligned}	
-		\frac{\di z}{\di t}&=f_{'x}(x(t),y(t))\cdot \frac{\di x}{\di t}+f_{'y}(x(t),y(t))\cdot \frac{\di y}{\di t}
-	\end{aligned}}\]
+\[\boxed{\begin{aligned}	
+		\frac{\di z}{\di t}&= f_{'x}(x(t),y(t))\cdot \frac{\di x}{\di t}+f_{'y}(x(t),y(t))\cdot \frac{\di y}{\di t}
+\end{aligned}}\]
 	
-	
-\section{Extremalwert (ohne Nebenbedingungen)}
-Der Punkt $(x_0,y_0)$ ist eine Extremstelle von $z=f(x,y)$, falls $f_{'x}(x_0,y_0)=0$ und $f_{'y}(x_0,y_0)=0$ und 
+\section{Extremalwert ohne Nebenbedingungen}
+Der Punkt $(x_0,y_0)$ ist eine Extremstelle von $z=f(x,y)$, falls:
+\[\boxed{
+	f_{'x}(x_0,y_0) = 0 \qquad \text{und} \qquad f_{'y}(x_0,y_0)=0
+}\] und 
 zusätzlich:
 \[
 \boxed{\begin{array}{l}
-	\Delta=f_{'xx}(x_0,y_0)\cdot f_{'yy}(x_0,y_0)-f_{'xy}(x_0,y_0)^2  > 0 gilt.\\
-	\\
-	\text{Gilt zusätzlich:}\\
-	f_{'xx}(x_0,y_0) < 0 \text{, so liegt ein Max. vor.}\\
-	f_{'xx}(x_0,y_0) > 0 \text{, so liegt ein Min. vor.}\\
+	\Delta=f_{'xx}(x_0,y_0)\cdot f_{'yy}(x_0,y_0)-f_{'xy}(x_0,y_0)^2\\
+	\Delta > 0 \text{ und }f_{'xx} < 0 \ \rightarrow\text{ Maximum}\\
+	\Delta > 0 \text{ und }f_{'xx} > 0 \ \rightarrow\text{ Minimum}
+	\\\\
+	\Delta < 0 \ \rightarrow \text{ Sattelpunkt}
 	\end{array}}\]
 \\
-Ist $\Delta$ negativ, so ist $(x_0,y_0)$ ein Sattelpunkt. Falls $\Delta =0$ ist, so kann man nicht entscheiden.
+Falls $\Delta =0$ ist, so kann man nicht entscheiden.
 
 
-\section{Extremalwert (mit Nebenbedingungen)}
+\section{Extremalwert mit Nebenbedingungen}
 Gesucht ist die Extremstelle von $z=f(x,y)$ unter der Nebenbedingung $\varphi(x,y)=0$.\\
 \[
 \boxed{\begin{array}{l}

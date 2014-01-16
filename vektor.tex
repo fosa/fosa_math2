@@ -1,0 +1,221 @@
+% coding:utf-8
+
+%----------------------------------------
+%FOSAPHY, a LaTeX-Code for a summary of mathematics
+%Copyright (C) 2013, Mario Felder, Michael Fallegger
+
+%This program is free software; you can redistribute it and/or
+%modify it under the terms of the GNU General Public License
+%as published by the Free Software Foundation; either version 2
+%of the License, or (at your option) any later version.
+
+%This program is distributed in the hope that it will be useful,
+%but WITHOUT ANY WARRANTY; without even the implied warranty of
+%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%GNU General Public License for more details.
+%----------------------------------------
+
+\chapter{Vektorgeometrie}
+
+\section{Parameterform}
+$\overrightarrow{r(t)}=
+\begin{pmatrix}
+ 	x_{Start}\\
+	y_{Start}\\
+	z_{Start}
+\end{pmatrix}
++
+t\cdot
+\begin{pmatrix}
+ 	x_{Ziel}-x_{Start}\\
+	y_{Ziel}-y_{Start}\\
+	z_{Ziel}-z_{Start}
+\end{pmatrix}
+$
+\\
+$t\in[0,1]$
+
+\section{Geschwindigkeit, Beschleunigung}
+Geschwindigkeit (Tangentialvektor):
+\\
+Es sei $\overrightarrow{r(t)}=
+\begin{pmatrix}
+ 	x(t)\\
+	y(t)\\
+	z(t)
+\end{pmatrix}$
+
+eine Bewegung. Dann beträgt die Geschwindigkeit:
+ $\overrightarrow{v(t)}=\dot{\overrightarrow{r(t)}}
+\begin{pmatrix}
+ 	\dot{x}(t)\\
+	\dot{y}(t)\\
+	\dot{z}(t)
+\end{pmatrix}$
+und die Beschleunigung:
+ $\overrightarrow{a(t)}=\dot{\overrightarrow{v(t)}}=\ddot{\overrightarrow{r(t)}}
+\begin{pmatrix}
+ 	\dot{x}(t)\\
+	\dot{y}(t)\\
+	\dot{z}(t)
+\end{pmatrix}$
+\\
+\section{Bogenlänge}
+\[
+	s= \int\limits_{t_1}^{t_2} v(t)\di t= \int\limits_{t_1}^{t_2} \sqrt{\dot{x}^2+\dot{y}^2+\dot{z}^2}\di t
+\]
+
+
+\section{Wegintegrale, Kurvenintegrale}
+Um das Wegintegral zu berechnen verwendet man das newtonische Gesetz; $W=F\cdot s$
+\[
+	W=\int \overrightarrow{F}(\overrightarrow{r}) \di \overrightarrow{r}
+\]
+Anders ausgedrückt lautet die Formel:
+\[
+	W=\int \overrightarrow{F}(\overrightarrow{r})\cdot \dot{\overrightarrow{r}} \di t
+\]
+Für die Arbeit: 
+\[
+	A= \int\limits_{P_1}^{P_2}\overrightarrow{v}\di r= \int\limits_{t_1}^{t_2} \overrightarrow{v}\dot{\overrightarrow{r}}\di t
+\]
+\section{Konservative Felder, Gradientenfelder, Potentialfelder}
+Ein Feld 
+ $\overrightarrow{F}
+\begin{pmatrix}
+ 	F_{x(x,y,z)}\\
+	F_{y(x,y,z)}\\
+	F_{z(x,y,z)}
+\end{pmatrix}$ heisst konservatives Feld, wenn es eine Funktion $\varphi(x,y,z)$ so gibt dass
+$	\begin{pmatrix}
+	 	\varphi_{'x}\\
+		\varphi_{'y}\\
+		\varphi_{'z}
+	\end{pmatrix} 
+	=																\begin{pmatrix}
+		F_{x(x,y,z)}\\											F_{y(x,y,z)}\\
+		F_{z(x,y,z)}								
+	\end{pmatrix} 
+$	\\
+\[
+	\\ Grad \varphi = \overrightarrow{F}(\overrightarrow{r})
+\]
+\\
+$\varphi$ heisst Potential.\\
+In einem Potentialfeld (ohne Loch) sind die Wegintegrale wegunabhängig und es gilt:
+\[
+	W=\int \overrightarrow{F}(\overrightarrow{r}) \di \overrightarrow{r}= \varphi(B)-\varphi(A)
+\]
+Merke: Geschlossener Weg in einem Potentialfeld = 0:
+\[
+	W=\int \overrightarrow{F}(\overrightarrow{r}) \di \overrightarrow{r}= \oint  \overrightarrow{F}(\overrightarrow{r}) \di \overrightarrow{r}=0
+\]
+\\
+\subsection{Konservativ}
+Nach Satz von Schwarz muss gelten:\\
+\[
+\left.\begin{array}{l}
+	\varphi_{'xy}=	\varphi_{'yx} \rightarrow \frac{\delta  F_x}{\delta y}=\frac{\delta  F_y}{\delta x} 
+	\\ \\
+	\varphi_{'xz}=	\varphi_{'zx} \rightarrow \frac{\delta  F_x}{\delta z}=\frac{\delta  F_z}{\delta x}
+	\\ \\
+	\varphi_{'yz}=	\varphi_{'zy} \rightarrow \frac{\delta  F_y}{\delta z}=\frac{\delta  F_z}{\delta y}
+\end{array} \right\}
+\begin{array}{l}
+	\text{Integrabilitätsbedingung,}\\
+	\text{falls erfüllt existiert ein Potential.}
+\end{array}
+\]
+\\
+\\
+ist F konservativ.\\
+\\
+\\
+Um das \underline{$\varphi$ zu berechnen} geht man von folgender Bedingung aus:\\
+$	\begin{pmatrix}
+	 	\varphi_{'x}\\
+		\varphi_{'y}\\
+		\varphi_{'z}
+	\end{pmatrix} 
+	=														\begin{pmatrix}
+		F_{x(x,y,z)}\\										F_{y(x,y,z)}\\
+		F_{z(x,y,z)}								
+	\end{pmatrix} 
+$
+Somit lautet das Lösungssystem:
+\[	
+		\varphi_{'x} \\=\\ 	F_{x(x,y,z)} \\ \rightarrow \\ \varphi_{x} \\=\\ 	\int F_{x(x,y,z)}\di x +h(y,z)
+\]
+\[	
+		\varphi_{'y} \\=\\  F_{y(x,y,z)} \\ \rightarrow \\
+		\varphi_{y} \\=\\  \int F_{y(x,y,z)} \di y +h(x,z)
+\]
+\[
+		\varphi_{'z} \\=\\  F_{z(x,y,z)} \\ \rightarrow \\
+		\varphi_{z} \\=\\  \int F_{z(x,y,z)} \di z +h(x,y)
+\]
+Aus diesen 3 Gleichungen setzt man dann $\varphi(x,y,z)$ zusammen. Überschneiden sich Funktion, werden sie nicht hinzugefügt. zB $\varphi_{x}=x^2y$ und $\varphi_{y}=x^2y +2y$ ergeben: $\varphi_{x,y}=x^2y +2y+C$.
+
+
+
+\subsection{Gradientenfelder}
+Richtungsableitungen:
+\\
+\[
+	\overrightarrow{t}=\dot{\overrightarrow{r}}=
+	\begin{pmatrix}
+	 	\dot{x}(t)\\
+		\dot{y}(t)\\
+		\dot{z}(t)
+	\end{pmatrix}
+	=
+	\frac{\di z}{\di t}=f_{'x}\dot x +f_{'y} \dot y
+	=
+	Gradf\cdot \frac{\dot{\overrightarrow{r}}}{\left| \dot{\overrightarrow{r}}\right| }
+	=
+	\underbrace{
+		\begin{pmatrix}
+				 	f_{'x}\\
+					f_{'y}
+			\end{pmatrix}
+	}_{Gradf}
+	\circ
+	\begin{pmatrix}
+			 	\dot x\\
+				\dot y
+		\end{pmatrix}	
+\]
+\\
+\[
+	\overrightarrow{t}=	
+	\begin{pmatrix}
+		a_x\\
+		a_y\\
+		grad f\cdot \overrightarrow{a}
+	\end{pmatrix}
+\]
+\\
+Die Ableitung von $z=f(x,y)$ in Richtung $	\overrightarrow{a}$ beträgt $\frac{\delta f}{\delta \overrightarrow{a}}= f\cdot \overrightarrow{a} = gradf\cdot\overrightarrow{e_a}=\tan\alpha$.
+\\
+\\
+Daraus lässt sich schliessen, dass somit 
+\[
+	\overrightarrow{e_a}=	
+	\begin{pmatrix}
+		\cos\varphi\\
+		\sin\varphi
+	\end{pmatrix}
+\]
+\\
+Der Gradient steht im jeweiligen Punkt senkrecht zur Höhenlinie durch diesen Punkt. Er zeigt in Richtung grössten Anstieg. Die Falllinie zeigt in Richtung $-grad f$.
+\\
+Verschiedene Zusammenhänge mit gradf:
+\[
+	gradf \cdot gradf = f_{'x}^2+f_{'y}^2
+\]
+\[
+	gradf\cdot \frac{	\overrightarrow{gradf}}{|gradf|}=|gradf|
+\]
+\[
+	\overrightarrow{a} \cdot	\overrightarrow{b} = 	|\overrightarrow{a}| \cdot	|\overrightarrow{b}|\cdot \cos \varphi
+\]

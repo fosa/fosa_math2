@@ -1,4 +1,4 @@
-%coding:utf-8
+% coding:utf-8
 
 %----------------------------------------
 %FOSAPHY, a LaTeX-Code for a summary of mathematics
@@ -15,26 +15,11 @@
 %GNU General Public License for more details.
 %----------------------------------------
 
-\documentclass[a5paper,10pt,fleqn]{book}
-
-\usepackage{fosamath_layout}
-
-\title{Formelsammlung Mathematik}
-
-\author{Mario Felder\\Michi Fallegger}
-\date{\today}
-
-%\catcode `\*=\active
-%\def *{\cdot}
-
-\begin{document}
-
-\maketitle
-\thispagestyle{empty}
-\cleardoublepage
-\pagenumbering{Roman}
-\tableofcontents
-\include{content}
-
-\end{document}
-
+	\setcounter{page}{1}
+    \pagenumbering{arabic}
+\input{repetition}   
+\input{partielle_Ableitung}		
+\input{differential_vekt}
+\input{integral}
+\input{vektor}
+\input{fehlerfortpflanzung}

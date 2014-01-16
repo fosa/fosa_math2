@@ -24,6 +24,7 @@
 \usepackage{graphicx}
 \usepackage[ngerman]{babel}
 \usepackage{amsmath}
+\usepackage{dsfont}
 %\usepackage[all]{xy}
 %\usepackage[xindy]{glossaries}
 \usepackage{makeidx}
@@ -92,8 +93,11 @@
 \newcommand{\im}{\ensuremath{\mathrm{j}}}
 \newcommand{\e}{\ensuremath{\mathrm{e\;\!}}}
 \newcommand{\di}{\ensuremath{\mathrm{d}}}
+\newcommand{\pdi}{\partial}
 \newcommand{\cis}{\ensuremath{\mathrm{cis}}}
 \newcommand{\bs}{\ensuremath{\backslash}}
+\newcommand{\difrac}[2]{\ensuremath{\frac{\di #1}{\di #2}}}
+\newcommand{\pdifrac}[2]{\ensuremath{\frac{\pdi #1}{\pdi #2}}}
 % \newboolean{ti}
 % \newboolean{nspire}
 % \newboolean{tiboth}

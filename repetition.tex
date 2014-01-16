@@ -16,40 +16,33 @@
 %----------------------------------------
 
 \chapter{Repetition}
-\section{Kreisgleichung}
-Der Mittelpunkt des Kreises wird mit $x_0$ und $y_0$ angegeben.\\
-\newline
+Kreisgleichung\\
+Der Mittelpunkt des Kreises wird mit $x_0$ und $y_0$ angegeben.
 \[
-	\boxed{(x-x_{0})^2+(y-y{0})^2=r^2 }
+	(x-x_{0})^2+(y-y_{0})^2=r^2 
 \]	
-\begin{tikzpicture}
-\begin{axis}[
-	xmin=0,   xmax=6,
-	ymin=0,   ymax=6,
-	extra x ticks={3},
-	extra y ticks={3},
-	extra tick style={grid=major},
-]
-	\draw[red] \pgfextra{
-	  \pgfpathellipse{\pgfplotspointaxisxy{3}{3}}
-		{\pgfplotspointaxisdirectionxy{2}{0}}
-		{\pgfplotspointaxisdirectionxy{0}{2}}
-	  % see also the documentation of 
-	  % 'axis direction cs' which
-	  % allows a simpler way to draw this ellipse
-	};
-	\addplot [only marks,mark=*] coordinates { (3,3) };
-\end{axis}
-\end{tikzpicture}
-\\
 \\
 Rotation um die z-Achse
 \[
-	\boxed{z=f(x,y)=g(\sqrt{x^2+y^2}}
+	z=f(x,y)=g(\sqrt{x^2+y^2})
 \]
 \\
+Schnittwinkel zweier Normalvektoren:
+\[
+	\cos\varphi=\frac{\overrightarrow{n_1}\cdot \overrightarrow{n_2}}{n_1 \cdot n_2}
+\]
 \\
+Extremwertstellen\\
 
+$ y''=f''(0)>0 $ Linkskrümmung $\rightarrow$ Minimum
 
+$ y''=f''(0)<0 $ Rechtskrümmung $\rightarrow$ Maximum
+\\\\
+Definitionsbereiche
+\[\begin{aligned}
+	\sqrt{x+y}\ &\rightarrow \ \mathds{D}=\left\lbrace (x, y) | x + y \geq 0\right\rbrace\\
+	\frac1{x}\ &\rightarrow \ \mathds{D}=\left\lbrace x | x \neq 0\right\rbrace\\
+	\ln{x}\ &\rightarrow \ \mathds{D}=\left\lbrace x | x > 0\right\rbrace
+\end{aligned}\]
 
 
