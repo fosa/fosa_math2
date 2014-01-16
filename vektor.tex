@@ -18,7 +18,7 @@
 \chapter{Vektorgeometrie}
 
 \section{Parameterform}
-$\overrightarrow{r(t)}=
+\[\overrightarrow{r(t)}=
 \begin{pmatrix}
  	x_{Start}\\
 	y_{Start}\\
@@ -31,7 +31,7 @@ t\cdot
 	y_{Ziel}-y_{Start}\\
 	z_{Ziel}-z_{Start}
 \end{pmatrix}
-$
+\]
 \\
 $t\in[0,1]$
 
@@ -43,9 +43,7 @@ Es sei $\overrightarrow{r(t)}=
  	x(t)\\
 	y(t)\\
 	z(t)
-\end{pmatrix}$
-
-eine Bewegung. Dann beträgt die Geschwindigkeit:
+\end{pmatrix}$ eine Bewegung. Dann beträgt die Geschwindigkeit:
  $\overrightarrow{v(t)}=\dot{\overrightarrow{r(t)}}
 \begin{pmatrix}
  	\dot{x}(t)\\
@@ -55,84 +53,118 @@ eine Bewegung. Dann beträgt die Geschwindigkeit:
 und die Beschleunigung:
  $\overrightarrow{a(t)}=\dot{\overrightarrow{v(t)}}=\ddot{\overrightarrow{r(t)}}
 \begin{pmatrix}
- 	\dot{x}(t)\\
-	\dot{y}(t)\\
-	\dot{z}(t)
+ 	\ddot{x}(t)\\
+	\ddot{y}(t)\\
+	\ddot{z}(t)
 \end{pmatrix}$
 \\
 \section{Bogenlänge}
-\[
+\[\boxed{
 	s= \int\limits_{t_1}^{t_2} v(t)\di t= \int\limits_{t_1}^{t_2} \sqrt{\dot{x}^2+\dot{y}^2+\dot{z}^2}\di t
-\]
+}\]
 
+\section{Vektorfeld}
+Ebenes Vektorfeld:
+\[\boxed{
+	\vec{F} = F_x(x,y) \cdot \vec{e}_x + F_y(x,y) \cdot \vec{e}_y = \left( \begin{matrix}
+		F_x(x,y)\\
+		F_y(x,y)
+	\end{matrix} \right)
+}\]
+\\
+\begin{footnotesize}
+	$F_x,F_y$: Skalare Komponenten des Vektorfeldes $\vec{F}(x,y)$
+\end{footnotesize}
+\\
 
 \section{Wegintegrale, Kurvenintegrale}
-Um das Wegintegral zu berechnen verwendet man das newtonische Gesetz; $W=F\cdot s$
-\[
-	W=\int \overrightarrow{F}(\overrightarrow{r}) \di \overrightarrow{r}
-\]
-Anders ausgedrückt lautet die Formel:
-\[
-	W=\int \overrightarrow{F}(\overrightarrow{r})\cdot \dot{\overrightarrow{r}} \di t
-\]
+Um das Wegintegral zu berechnen verwendet man das newtonische Gesetz: $W=F\cdot s$
+\[\boxed{
+	W=\int\limits_C \overrightarrow{F} \ \di \overrightarrow{r} = 
+	\int\limits_{t_1}^{t_2} \overrightarrow{F}\cdot \dot{\overrightarrow{r}} \ \di t =
+	\int\limits_{t_1}^{t_2} \left( F_x \cdot \dot{x} + F_y \cdot \dot{y} \right) \ \di t
+}\]
+\\
+\begin{footnotesize}
+	$\vec{F} = \vec{F}(x,y)$: ebenes Fektorfeld\\
+	$\vec{r} = \vec{r}(t)$: Ortsvektor der Kurve $C$\\ 
+\end{footnotesize}
+\\
 Für die Arbeit: 
 \[
 	A= \int\limits_{P_1}^{P_2}\overrightarrow{v}\di r= \int\limits_{t_1}^{t_2} \overrightarrow{v}\dot{\overrightarrow{r}}\di t
 \]
-\section{Konservative Felder, Gradientenfelder, Potentialfelder}
-Ein Feld 
- $\overrightarrow{F}
-\begin{pmatrix}
- 	F_{x(x,y,z)}\\
-	F_{y(x,y,z)}\\
-	F_{z(x,y,z)}
-\end{pmatrix}$ heisst konservatives Feld, wenn es eine Funktion $\varphi(x,y,z)$ so gibt dass
-$	\begin{pmatrix}
-	 	\varphi_{'x}\\
-		\varphi_{'y}\\
-		\varphi_{'z}
-	\end{pmatrix} 
-	=																\begin{pmatrix}
-		F_{x(x,y,z)}\\											F_{y(x,y,z)}\\
-		F_{z(x,y,z)}								
-	\end{pmatrix} 
-$	\\
-\[
-	\\ Grad \varphi = \overrightarrow{F}(\overrightarrow{r})
-\]
 \\
-$\varphi$ heisst Potential.\\
+
+
+\section{Gradient eines Skalarfeldes}
+\[\boxed{
+	\renewcommand{\arraystretch}{1.4}
+	\grad \varphi = \pdifrac{\varphi}{x} \cdot \vec{e}_x + \pdifrac{\varphi}{y} \cdot \vec{e}_y + \pdifrac{\varphi}{z} \cdot \vec{e}_z = 
+	\left(\begin{matrix}
+		\pdifrac{\varphi}{x} \\
+		\pdifrac{\varphi}{y} \\
+		\pdifrac{\varphi}{z}
+	\end{matrix}\right)
+}\]
+\\
+\begin{footnotesize}
+	$\varphi = \varphi(x,y,z)$: Räumliches Skalarfeld
+\end{footnotesize}
+
+
+\section{Konservative Felder, Potentialfelder}
+Ein Vektorfeld $\vec{F}$ heisst konservatives Feld oder Potentialfeld, wenn es eine Funktion $\varphi(x,y,z)$ so gibt dass:
+\[\boxed{
+	\renewcommand{\arraystretch}{1.4}
+	\begin{aligned}	
+	\vec{F} &= \grad \varphi \\
+	\left( \begin{matrix}
+		F_x \\
+		F_y \\
+		F_z \\
+	\end{matrix} \right) &=
+	\left(\begin{matrix}
+		\pdifrac{\varphi}{x} \\
+		\pdifrac{\varphi}{y} \\
+		\pdifrac{\varphi}{z}
+	\end{matrix}\right)
+\end{aligned}}\]
+\\
+\begin{footnotesize}
+	$\varphi$: heisst Potential.\\
+\end{footnotesize}
+\\
 In einem Potentialfeld (ohne Loch) sind die Wegintegrale wegunabhängig und es gilt:
 \[
-	W=\int \overrightarrow{F}(\overrightarrow{r}) \di \overrightarrow{r}= \varphi(B)-\varphi(A)
+	W=\int \overrightarrow{F} \ \di \overrightarrow{r}= \phi(B)-\phi(A)
 \]
 Merke: Geschlossener Weg in einem Potentialfeld = 0:
 \[
-	W=\int \overrightarrow{F}(\overrightarrow{r}) \di \overrightarrow{r}= \oint  \overrightarrow{F}(\overrightarrow{r}) \di \overrightarrow{r}=0
+	W=\int \overrightarrow{F} \ \di \overrightarrow{r}= \oint  \overrightarrow{F} \ \di \overrightarrow{r}=0
 \]
 \\
 \subsection{Konservativ}
 Nach Satz von Schwarz muss gelten:\\
 \[
 \left.\begin{array}{l}
-	\varphi_{'xy}=	\varphi_{'yx} \rightarrow \frac{\delta  F_x}{\delta y}=\frac{\delta  F_y}{\delta x} 
+	\varphi_{'xy}=	\varphi_{'yx} \rightarrow \pdifrac{F_x}{y} = \pdifrac{F_y}{x} 
 	\\ \\
-	\varphi_{'xz}=	\varphi_{'zx} \rightarrow \frac{\delta  F_x}{\delta z}=\frac{\delta  F_z}{\delta x}
+	\varphi_{'xz}=	\varphi_{'zx} \rightarrow \pdifrac{F_x}{z} = \pdifrac{F_z}{x}
 	\\ \\
-	\varphi_{'yz}=	\varphi_{'zy} \rightarrow \frac{\delta  F_y}{\delta z}=\frac{\delta  F_z}{\delta y}
+	\varphi_{'yz}=	\varphi_{'zy} \rightarrow \pdifrac{F_y}{z} = \pdifrac{F_z}{y}
 \end{array} \right\}
 \begin{array}{l}
 	\text{Integrabilitätsbedingung,}\\
-	\text{falls erfüllt existiert ein Potential.}
+	\text{falls erfüllt existiert ein Potential}\\
+	\text{und $\vec{F}$ ist konservativ.}
 \end{array}
 \]
 \\
 \\
-ist F konservativ.\\
-\\
-\\
-Um das \underline{$\varphi$ zu berechnen} geht man von folgender Bedingung aus:\\
-$	\begin{pmatrix}
+Um \underline{$\varphi$ zu berechnen} geht man von folgender Bedingung aus:
+\[
+	\begin{pmatrix}
 	 	\varphi_{'x}\\
 		\varphi_{'y}\\
 		\varphi_{'z}
@@ -141,7 +173,8 @@ $	\begin{pmatrix}
 		F_{x(x,y,z)}\\										F_{y(x,y,z)}\\
 		F_{z(x,y,z)}								
 	\end{pmatrix} 
-$
+\]
+\\
 Somit lautet das Lösungssystem:
 \[	
 		\varphi_{'x} \\=\\ 	F_{x(x,y,z)} \\ \rightarrow \\ \varphi_{x} \\=\\ 	\int F_{x(x,y,z)}\di x +h(y,z)
@@ -154,15 +187,23 @@ Somit lautet das Lösungssystem:
 		\varphi_{'z} \\=\\  F_{z(x,y,z)} \\ \rightarrow \\
 		\varphi_{z} \\=\\  \int F_{z(x,y,z)} \di z +h(x,y)
 \]
-Aus diesen 3 Gleichungen setzt man dann $\varphi(x,y,z)$ zusammen. Überschneiden sich Funktion, werden sie nicht hinzugefügt. zB $\varphi_{x}=x^2y$ und $\varphi_{y}=x^2y +2y$ ergeben: $\varphi_{x,y}=x^2y +2y+C$.
+Aus diesen 3 Gleichungen setzt man $\varphi(x,y,z)$ zusammen. Überschneiden sich Funktion, werden sie nicht hinzugefügt.\\
+\\
+\begin{footnotesize}
+z.B.: $\varphi_{x}=x^2y$ und $\varphi_{y}=x^2y +2y$ ergeben: $\varphi(x,y)=x^2y +2y+C$.
+\end{footnotesize}
+\\
 
 
+\subsection{Richtungsableitung}
+Richtungsableitung:
+\[\boxed{
+	\pdifrac{f}{\vec{a}} = \grad f \cdot \vec{e}_a = \frac{\grad f \cdot \vec{a}}{\left| \vec{a} \right|} = \tan\alpha
+}\]
 
-\subsection{Gradientenfelder}
-Richtungsableitungen:
 \\
 \[
-	\overrightarrow{t}=\dot{\overrightarrow{r}}=
+	\vec{t}=\dot{\vec{r}}=
 	\begin{pmatrix}
 	 	\dot{x}(t)\\
 		\dot{y}(t)\\
@@ -171,15 +212,15 @@ Richtungsableitungen:
 	=
 	\frac{\di z}{\di t}=f_{'x}\dot x +f_{'y} \dot y
 	=
-	Gradf\cdot \frac{\dot{\overrightarrow{r}}}{\left| \dot{\overrightarrow{r}}\right| }
+	\grad f\cdot \frac{\dot{\vec{r}}}{\left| \dot{\vec{r}}\right| }
 	=
 	\underbrace{
 		\begin{pmatrix}
 				 	f_{'x}\\
 					f_{'y}
 			\end{pmatrix}
-	}_{Gradf}
-	\circ
+	}_{\grad f}
+	\cdot
 	\begin{pmatrix}
 			 	\dot x\\
 				\dot y
@@ -187,35 +228,35 @@ Richtungsableitungen:
 \]
 \\
 \[
-	\overrightarrow{t}=	
+	\vec{t}=	
 	\begin{pmatrix}
 		a_x\\
 		a_y\\
-		grad f\cdot \overrightarrow{a}
+		\grad f\cdot \vec{a}
 	\end{pmatrix}
 \]
 \\
-Die Ableitung von $z=f(x,y)$ in Richtung $	\overrightarrow{a}$ beträgt $\frac{\delta f}{\delta \overrightarrow{a}}= f\cdot \overrightarrow{a} = gradf\cdot\overrightarrow{e_a}=\tan\alpha$.
 \\
-\\
-Daraus lässt sich schliessen, dass somit 
+Wenn der Winkel zur $x$-Achse gegeben ist für die Richtung:
 \[
-	\overrightarrow{e_a}=	
+	\vec{e_a}=	
 	\begin{pmatrix}
-		\cos\varphi\\
-		\sin\varphi
+		\cos\alpha\\
+		\sin\alpha
 	\end{pmatrix}
 \]
 \\
-Der Gradient steht im jeweiligen Punkt senkrecht zur Höhenlinie durch diesen Punkt. Er zeigt in Richtung grössten Anstieg. Die Falllinie zeigt in Richtung $-grad f$.
+Der Gradient steht im jeweiligen Punkt senkrecht zur Höhenlinie. Er zeigt in Richtung grössten Anstieg.\\
+Die Falllinie zeigt in Richtung $-\grad f$.
 \\
-Verschiedene Zusammenhänge mit gradf:
+\\
+Verschiedene Zusammenhänge mit $\grad f$:
 \[
-	gradf \cdot gradf = f_{'x}^2+f_{'y}^2
+	\grad f \cdot \grad f = f_{'x}^2+f_{'y}^2
 \]
 \[
-	gradf\cdot \frac{	\overrightarrow{gradf}}{|gradf|}=|gradf|
+	\grad f\cdot \frac{	\vec{\grad f}}{|\grad f|}=|\grad f|
 \]
 \[
-	\overrightarrow{a} \cdot	\overrightarrow{b} = 	|\overrightarrow{a}| \cdot	|\overrightarrow{b}|\cdot \cos \varphi
+	\vec{a} \cdot	\vec{b} = 	\left| \vec{a} \right| \cdot	\left| \vec{b} \right| \cdot \cos \varphi
 \]

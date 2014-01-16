@@ -23,18 +23,19 @@ Fehlerfortplanzung bei Funktionen mit \underline{1 Variablen}\\
 Fehlerrechnung  bei Funktionen mit \underline{2 Variablen}.\\
 Fehlerfortpflanzungsgesetz:
 Ändert x um $\Delta x$ und y um $\Delta y$ so ändert der Funktionswert z um:
-
------>Formel
-	%\[ \Delta z = \abs{f_{'x}(x_0,y_0)\Delta x}+ \abs{f_{'y}(x_0,y_0)\Delta y} \]\\
+\[ 
+	\Delta z = \pdifrac{f(x,y)}{x} \cdot \Delta x +  \pdifrac{f(x,y)}{y} \cdot \Delta y
+\]
 \\
-$\Delta x \geqslant 0, \Delta y \geqslant 0$
-\newline
 \\
 Der maximale Fehler von $z=f(x,y)$ lautet:
 \[
 \boxed{\begin{aligned}	
-		\Delta z&=| f_{'x}(x_0,y_0)| \Delta x+ |f_{'y}(x_0,y_0)| \Delta y
-	\end{aligned}}\]
-\newline
-Relativer Fehler: \[\frac{\Delta z}{z}=\%\]
-Absoluter Fehler: \[\Delta z=\%\cdot z \]
+	\Delta z&=\left| f_{'x}(x_0,y_0) \right| \cdot \Delta x+ \left|f_{'y}(x_0,y_0) \right| \cdot \Delta y	
+\end{aligned}}\]
+\\
+\begin{footnotesize}
+	$\Delta x \geqslant 0, \Delta y \geqslant 0$\\\\
+Relativer Fehler: $\frac{\Delta z}{z}=\%$\\
+Absoluter Fehler: $\Delta z=\%\cdot z $\\
+\end{footnotesize}
